@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a14;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d2d52;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-gold-200 via-gold-400 to-gold-300 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+  .glass-gold {
+    @apply border border-gold-400/30 bg-gold-400/[0.06] backdrop-blur-xl;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-300 to-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-all duration-300 hover:shadow-[0_0_32px_rgba(212,175,55,0.45)] hover:scale-[1.02] active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-gold-400/50 hover:bg-gold-400/[0.06] hover:scale-[1.02] active:scale-[0.98];
+  }
+  .card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:border-gold-400/30;
+  }
+  .section-pad {
+    @apply px-6 py-20 md:px-12 md:py-28;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/[0.06] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .perspective {
+    perspective: 1200px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
